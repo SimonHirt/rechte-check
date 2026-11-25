@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rechte-Check: Entscheiden wie eine Fachkraft</title>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--tx:#1c2430;--mu:#5d6675;--ac:#1d4e89;--ok:#2b8a57;--mid:#c58a1a;--no:#c0392b;--bd:#dcd8cd;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14181f;--card:#1e242e;--tx:#eceff4;--mu:#9aa4b2;--ac:#6ea8e8;--ok:#4cc58a;--mid:#e0ac3d;--no:#ef6b5b;--bd:#323a47;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14181f;--card:#1e242e;--tx:#eceff4;--mu:#9aa4b2;--ac:#6ea8e8;--ok:#4cc58a;--mid:#e0ac3d;--no:#ef6b5b;--bd:#323a47;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.55 Georgia,"Times New Roman",serif}
+main{max-width:720px;margin:0 auto;padding:24px 18px 48px}
+h1{font-size:2rem;line-height:1.2;margin:.2em 0}
+h2{font-size:1.3rem;margin:1.2em 0 .4em}
+.sans,button,.tag{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:22px}
+.mu{color:var(--mu);font-size:.95rem}
+button{font-size:1rem;padding:14px 16px;border-radius:10px;border:1.5px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer;width:100%;margin-top:10px;text-align:left}
+button:hover{border-color:var(--ac)}
+button.p{background:var(--ac);color:#fff;border-color:var(--ac);text-align:center;font-weight:600}
+button.s{width:auto;padding:8px 14px;text-align:center;margin-top:18px}
+.bar{height:6px;background:var(--bd);border-radius:3px;overflow:hidden;margin-bottom:18px}
+.bar i{display:block;height:100%;background:var(--ac)}
+.case{margin:0 0 14px}
+.stm{font-size:1.2rem;line-height:1.4;margin:.6em 0;padding:12px 14px;border-left:4px solid var(--ac);background:var(--bg);border-radius:6px}
+.res{margin:14px 0}
+.track{height:16px;background:var(--bd);border-radius:8px;overflow:hidden;margin-top:6px}
+.track i{display:block;height:100%}
+.it{border-top:1px solid var(--bd);padding:14px 0}
+.tag{display:inline-block;font-size:.78rem;padding:2px 8px;border-radius:99px;border:1px solid var(--bd);margin:4px 6px 0 0;color:var(--mu)}
+.g{color:var(--ok)}.m{color:var(--mid)}.r{color:var(--no)}
+a.tag{text-decoration:none}a.tag:hover{border-color:var(--ac);color:var(--ac)}
+details{margin-top:10px}summary{cursor:pointer;font-family:system-ui,sans-serif;font-size:.92rem;color:var(--ac)}details p{margin:.6em 0}
+.src a{color:var(--ac)}
+.ft{margin-top:36px;padding-top:14px;border-top:1px solid var(--bd);font:.85rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--mu)}
+.ft a,#legal a{color:var(--ac)}
+#legal h1{font-size:1.7rem}#legal h2{font-size:1.1rem;margin:1.4em 0 .3em}#legal p{margin:.4em 0}
+.ph{background:#fff3b0;color:#000;padding:0 3px;border-radius:3px}
+</style>
+</head>
+<body>
+<main><div id="app"></div><div id="legal" hidden></div><div class="ft"><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutzerklärung</a></div></main>
+<script>
+const L={kr:"UN-Kinderrechtskonvention",ae:"Allgemeine Erklärung der Menschenrechte",gg:"Grundgesetz"};
+const S=[
+{h:"Meinungsfreiheit oder Schutz?",t:"Du arbeitest in der Wohngruppe „GemeinsamLeben“. Ein 13-Jähriger beleidigt einen Mitbewohner mit Migrationshintergrund wiederholt rassistisch, äußert sich aber auch sachlich-kritisch zur Zuwanderung. Er beruft sich auf seine Meinungsfreiheit. Der betroffene Jugendliche leidet sichtbar. Eine Kollegin fordert: „Dann verbieten wir ihm eben jede Äußerung zu diesem Thema.“",q:"Die Fachkraft darf dem 13-Jährigen jede Äußerung zum Thema Zuwanderung untersagen, um rassistische Aussagen zu vermeiden.",c:-1,kr:"Art. 2, 12, 13 Abs. 2, 29 Abs. 1 d",ae:"Art. 1, 2, 19, 29 Abs. 2",gg:"Art. 1, 3 Abs. 3, 5",n:"Herabwürdigende, rassistische Äußerungen dürfen untersagt werden (Schutz der Würde anderer). Eine sachliche, auch unbequeme Meinung fällt dagegen unter die Meinungsfreiheit. Ein Totalverbot ist unverhältnismäßig, das Gespräch bleibt der pädagogische Weg."},
+{h:"Verschwiegenheit oder Eingreifen?",t:"Als Schulsozialarbeiterin erfährst du: Die Lehrkraft im katholischen Religionsunterricht einer 16-jährigen Muslima drängt sie immer wieder zum Übertritt, ihr Glaube gehöre in einem christlich geprägten Bundesland nicht hierher. Die Schülerin vertraut sich dir an, bittet dich aber, nichts zu unternehmen, weil sie schlechtere Noten fürchtet.",q:"Die Sozialarbeiterin sollte das weitere Vorgehen gemeinsam mit der Schülerin festlegen und darf nicht einfach so ohne ihr Einverständnis die Schulleitung einschalten.",c:1,kr:"Art. 12, 14",ae:"Art. 18",gg:"Art. 4, 7 Abs. 2",n:"Das Verhalten der Lehrkraft verletzt die Religionsfreiheit und muss enden. Die 16-Jährige hat aber ein Recht auf Beteiligung und Vertrauensschutz. Ziel ist, sie zu stärken und Schritte gemeinsam zu planen. Nur bei Gefährdung kommt ein Vorgehen gegen ihren Willen in Betracht."},
+{h:"Tagebuch und Sorge",t:"Eine Mutter berichtet dir in der Beratungsstelle: Ihre 14-jährige Tochter zieht sich seit Wochen zurück, isst kaum noch mit der Familie und hat geäußert, es sei ihr alles egal. Ein Gespräch blockt die Tochter ab. Daraufhin hat die Mutter heimlich im Tagebuch gelesen.",q:"Die Mutter durfte das Tagebuch heimlich lesen, weil sie konkrete Anzeichen für eine Gefährdung ihrer Tochter hatte.",c:0,kr:"Art. 3, 16, 19",ae:"Art. 12",gg:"Art. 2 Abs. 1, Art. 1, 6 Abs. 2",n:"Privatsphäre des Kindes und Schutzpflicht der Eltern stehen gegeneinander. Bei konkreter Gefahr kann ein Eingriff gerechtfertigt sein, es gilt aber der Vorrang milderer Mittel (Gespräch, Beratung, Fachhilfe). Eine eindeutige Antwort gibt es deshalb nicht."},
+{h:"Verbot der Skatehalle",t:"Der Vater einer 17-Jährigen verbietet ihr den Besuch der Skatehalle, weil er gehört hat, dass dort Cannabis konsumiert wird. Eigene Beobachtungen hat er nicht. Er droht, ihr bei Missachtung den Schlüssel zu ihrer Simson wegzunehmen. Die Tochter sagt dir als Jugendsozialarbeiter, dort seien ihre engsten Freunde und mit Drogen habe sie nichts zu tun.",q:"Der Vater darf das Verbot aussprechen und mit Sanktionen durchsetzen, weil er sich um die Gesundheit und Straffreiheit seiner Tochter sorgt.",c:-1,kr:"Art. 3, 5, 12, 15, 31",ae:"Art. 20, 24",gg:"Art. 2 Abs. 1, 6 Abs. 2",n:"Das Elternrecht umfasst Schutz, ist aber an das Kindeswohl und die wachsende Selbstständigkeit gebunden. Ein pauschales Verbot wegen eines unbelegten Gerüchts bei einer fast Volljährigen ist nicht verhältnismäßig. Gespräch und konkrete Absprachen sind das mildere Mittel."},
+{h:"Hilfe im Familienbetrieb",t:"Als Schulsozialarbeiterin stellst du fest: Ein 15-Jähriger fehlt immer häufiger (entschuldigt), weil er in der Montagefirma seines Vaters aushilft. Ohne ihn stünde der Betrieb vor der Insolvenz. Der Junge will helfen und ist stolz darauf, seine Noten sinken aber. Du suchst nach einer Lösung.",q:"Der 15-Jährige darf in der Notlage gelegentlich und geringfügig während der Schulzeit in der Firma helfen, um einer Insolvenz vorzubeugen. Jedoch nur, wenn seine Noten nicht darunter leiden würden.",c:-1,kr:"Art. 28, 31, 32",ae:"Art. 26",gg:"Art. 6 Abs. 2, 7 Abs. 1",n:"Bildung hat Vorrang, Unterrichtsversäumnis ist keine Lösung. Gelegentliche leichte Mithilfe in der Familie ist aber nicht per se verboten. Entscheidend ist, dass Schule, Freizeit und Gesundheit nicht leiden. Zusätzlich gilt das Jugendarbeitsschutzgesetz (nicht Teil des Vergleichs). Auch die Familie braucht Unterstützung."},
+{h:"Die J1 und die Angst",t:"Ein 14-Jähriger vertraut dir im Jugendtreff an: Er müsste zur J1-Untersuchung, sein Vater will aber nicht mitkommen („Das schaffst du allein“). Der Junge hat Angst vor dem Termin und vor dem Ärger des Vaters. Er bittet dich, dem Vater nichts zu sagen.",q:"Die Sozialarbeiterin darf den Arzttermin mit dem Jungen vereinbaren und ihn begleiten, ohne den Vater zu informieren.",c:-1,kr:"Art. 3, 12, 24",ae:"Art. 25",gg:"Art. 2 Abs. 2, 6 Abs. 2",n:"Gesundheitsvorsorge ist wichtig, und der Junge hat ein Recht auf Beteiligung. Die Personensorge liegt aber bei den Eltern, ein heimliches Organisieren ist nicht vorgesehen. Besser: mit dem Jungen klären, wie er mit dem Vater sprechen kann, ggf. gemeinsames Gespräch. Bei Hinweisen auf Gefährdung greift der Kinderschutz."},
+{h:"Das Bier im Sportverein",t:"Ein Vater trainiert in der Herrenmannschaft, seine Söhne (12 und 16) in der Jugend. In der Sportsbar bietet er beiden einen Schluck Bier an: „Damit ihr auch Teil der Fußballrige werdet!“ Du bist als Jugendleiterin anwesend. Du weißt, dass der 16-Jährige eine Vergangenheit mit Alkoholmissbrauch hat. Der 12-Jährige zögert und trinkt nicht.",q:"Es ist vertretbar, dass der Vater seinem 16-jährigen Sohn in seiner Gegenwart ein Bier anbietet. Du intervenierst nicht.",c:0,kr:"Art. 3, 5, 24",gg:"Art. 2 Abs. 2, 6 Abs. 2",n:"Das Jugendschutzgesetz (nicht Teil des Vergleichs) erlaubt Bier ab 16 auch ohne Begleitung, ab 14 in Begleitung der Eltern, unter 14 gar nicht. Beim 16-Jährigen stehen Erziehungsfreiheit und Gesundheitsschutz gegeneinander, pädagogisch ist das umstritten. Der 12-Jährige darf nicht mittrinken."},
+{h:"Wille oder Wohl?",t:"Du bist Fachkraft im Jugendamt. Eine 15-Jährige soll aus ihrer Wohngruppe in eine andere wechseln, weil das Umfeld dort riskantes Verhalten (Alkohol, nächtliches Weglaufen) bei ihr verstärkt. Sie will unbedingt bleiben, dort seien ihre einzigen Freundinnen.",q:"Die Fachkraft darf den Wechsel auch gegen den Willen der 15-Jährigen entscheiden, wenn sie sie angehört und die Gefährdung nachvollziehbar begründet hat.",c:1,kr:"Art. 3, 12",gg:"Art. 1, 2 Abs. 1",n:"Das Kindeswohl hat Vorrang (Art. 3 UN-KRK), der Wille des Kindes muss gehört und ernsthaft berücksichtigt werden (Art. 12), ist aber nicht allein ausschlaggebend. Entscheidend sind Anhörung, Begründung und die Suche nach milderen Lösungen (vgl. SGB VIII §§ 8, 36)."},
+{h:"Schulplatz mit Vorbehalt",t:"Du berätst in einer Flüchtlingsunterkunft. Ein geflüchteter 10-Jähriger wird von der Schule nicht aufgenommen. Die Schulleitung sagt, der Aufenthaltsstatus sei ungeklärt, man wolle keine knappen Ressourcen in ein Kind investieren, das vielleicht bald gehen müsse.",q:"Die Schule darf die Aufnahme zurückstellen, bis der Aufenthaltsstatus geklärt ist, weil sie sonst Ressourcen unsicher einsetzt.",c:-1,kr:"Art. 2, 22, 28",ae:"Art. 26",gg:"Art. 3 Abs. 3, 7 Abs. 1",n:"Das Recht auf Bildung gilt unabhängig vom Aufenthaltsstatus. Die Schulpflicht ist Ländersache, wichtig ist aber, dass das Kind zügig einen Platz erhält. Knappe Ressourcen sind ein Problem des Staates, sie dürfen nicht zulasten des Kindes gehen."},
+{h:"Hausregel Auszeitraum",t:"In der Wohngruppe schlägt ein 12-Jähriger einen Mitbewohner. Deine Kollegin schließt ihn zur „Auszeit“ in seinem Zimmer ein. Das sei im Gruppenkonzept so vorgesehen und schütze die anderen Kinder. Du bist unsicher, ob du widersprichst. Jedes Kind hat das Gruppenkonzept zu Beginn unterschrieben.",q:"Das Einschließen ist zulässig, weil es im Konzept der Einrichtung vorgesehen ist und andere Kinder schützt.",c:-1,kr:"Art. 19, 37 b",ae:"Art. 3, 9",gg:"Art. 1, 2 Abs. 2, 104",n:"Einschließen ist eine Freiheitsentziehung. Bei Minderjährigen ist sie nur mit Genehmigung des Familiengerichts zulässig (vgl. § 1631b BGB). Ein Konzept oder eine Hausregel reicht nicht. Zum Schutz anderer sind mildere Mittel gefragt (Begleitung, räumliche Trennung, Gespräch)."},
+{h:"Vertrauen und Kinderschutz",t:"Ein 14-Jähriger erzählt dir als Schulsozialarbeiter, sein Vater gebe ihm „manchmal eine Ohrfeige“, sonst sei alles gut. Er bittet dich dringend, es niemandem zu sagen, sonst rede er nie wieder mit dir. Es gibt keine Hinweise auf eine akute Gefahr.",q:"Die Fachkraft darf zunächst das Gespräch mit dem Jungen und seinen Eltern suchen und das Jugendamt vorerst nicht einschalten, solange keine akute Gefahr besteht.",c:1,kr:"Art. 3, 12, 19",ae:"Art. 5",gg:"Art. 2 Abs. 2, 6 Abs. 2",n:"Gewalt in der Erziehung ist nicht zulässig (Art. 19 UN-KRK, Art. 5 AEMR, vgl. § 1631 BGB). Das Vorgehen ist aber abgestuft: Gefährdung einschätzen (mit insoweit erfahrener Fachkraft), das Kind beteiligen, Hilfen anbieten. Das Jugendamt kommt hinzu, wenn Hilfen nicht ausreichen oder akute Gefahr besteht (vgl. § 8a SGB VIII, § 4 KKG)."},
+{h:"Barrierefrei um jeden Preis?",t:"Ein 14-Jähriger im Rollstuhl möchte ins Jugendzentrum, in dem du arbeitest. Der barrierefreie Umbau kostet rund 20.000 €. Das Budget reicht nur, wenn dafür drei Angebote für etwa 40 andere Jugendliche gestrichen werden. Die Leitung will ablehnen.",q:"Die Einrichtung darf den Jugendlichen ablehnen, weil der Umbau unverhältnismäßig teuer wäre.",c:0,kr:"Art. 2, 23",ae:"Art. 1, 2",gg:"Art. 3 Abs. 3",n:"Niemand darf wegen einer Behinderung benachteiligt werden, es müssen aber nur zumutbare Anpassungen erfolgen. Teilhabe des Jugendlichen und Interessen der anderen stehen gegeneinander. Eine pauschale Ablehnung genügt nicht, Alternativen sind zu prüfen (mobile Rampe, andere Räume, Fördermittel, Kooperationen). Eine eindeutige Antwort gibt es nicht."}
+];
+const N=S.length,A=[],app=document.getElementById("app");let i=0;
+const lab={1:"Stimme zu",0:"Neutral","-1":"Stimme dagegen"};
+function start(){app.innerHTML=`<p class="mu sans">Ausstellung · Menschen- und Kinderrechte</p><h1>Rechte-Check</h1>
+<p>Versetze dich in die Rolle einer Fachkraft der Sozialen Arbeit. Dir begegnen ${N} Dilemmata, in denen berechtigte Interessen und Rechte gegeneinander stehen. Lies genau und bewerte jeweils eine Entscheidung mit <b>„Stimme zu“</b>, <b>„Neutral“</b> oder <b>„Stimme dagegen“</b>. Am Ende siehst du, wie sehr deine Einschätzungen mit diesen drei Texten übereinstimmen:</p>
+<div class="card"><p style="margin:0">• UN-Kinderrechtskonvention (UN-KRK, 1989)<br>• Allgemeine Erklärung der Menschenrechte (AEMR, UN 1948)<br>• Grundgesetz (GG, 1949)</p></div>
+<p class="mu sans">Es gibt keine Rechtsberatung und keine „falschen“ Antworten, das Ergebnis ist ein Denkanstoß. Deine Antworten werden nicht gespeichert.</p>
+<button class="p" onclick="q(0)">Quiz starten</button>`}
+function q(n){i=n;const s=S[n];app.innerHTML=`<div class="bar"><i style="width:${n/N*100}%"></i></div>
+<p class="mu sans">Situation ${n+1} von ${N}: ${s.h}</p><div class="card"><p class="case">${s.t}</p><p class="stm">${s.q}</p>
+<button onclick="a(1)">Stimme zu</button><button onclick="a(0)">Neutral</button><button onclick="a(-1)">Stimme dagegen</button></div>
+${n>0?'<button class="s" onclick="q('+(n-1)+')">← Zurück</button>':''}`}
+/* Optional: ausführlichere ERKLÄRUNGEN je Situation (1 bis 12) hier eintragen, Absätze mit 
+
+ trennen. Leer = die Erklärung aus der Tabelle (Feld n) wird angezeigt. */
+const E=["","","","","","","","","","","",""];
+const U={kr:"https://www.unicef.de/informieren/ueber-uns/fuer-kinderrechte/un-kinderrechtskonvention",ae:"https://unric.org/de/allgemeine-erklaerung-menschenrechte/",gg:"https://www.gesetze-im-internet.de/gg/art_"};
+const nm={kr:"UN-KRK",ae:"AEMR",gg:"GG"};
+function links(s,k){const o='target="_blank" rel="noopener noreferrer"';
+if(k==="gg"){const nums=[...new Set(s.gg.replace(/Abs\.\s*\d+|S\.\s*\d+/g,"").match(/\d+/g))];return nums.map(n=>`<a class="tag" href="${U.gg}${n}.html" ${o}>GG Art. ${n} ↗</a>`).join("")}
+return `<a class="tag" href="${U[k]}" ${o}>${nm[k]} ${s[k]} ↗</a>`}
+const para=t=>t.trim()?t.split(/\n\n+/).map(x=>`<p>${x}</p>`).join(""):`<p class="mu">Die Erklärung zu dieser Situation folgt.</p>`;
+function a(v){A[i]=v;i<N-1?q(i+1):result()}
+function score(k){let p=0,c=0;S.forEach((s,j)=>{if(s[k]){c++;const v=A[j];p+=v===s.c?1:(v===0||s.c===0?.5:0);}});return{pct:Math.round(p/c*100),c};}
+function result(){
+let h=`<p class="mu sans">Dein Ergebnis</p><h1>Übereinstimmung</h1><p class="mu">Je mehr Entscheidungen du im Sinne des jeweiligen Textes bewertet hast, desto höher der Wert. „Neutral“ zählt halb. Bei Dilemmata ohne eindeutige Lösung ist „Neutral“ die beste Antwort.</p><div class="card">`;
+for(const k of["kr","ae","gg"]){const r=score(k),col=r.pct>=75?"var(--ok)":r.pct>=50?"var(--mid)":"var(--no)";
+h+=`<div class="res"><b class="sans">${L[k]}</b> <span class="mu sans">(${r.c} relevante Situationen)</span><div class="sans" style="font-size:1.6rem;font-weight:700">${r.pct} %</div><div class="track"><i style="width:${r.pct}%;background:${col}"></i></div></div>`}
+h+=`</div><h2>Deine Antworten im Detail</h2><div class="card" style="padding-top:8px;padding-bottom:8px">`;
+S.forEach((s,j)=>{const v=A[j],ok=v===s.c,cls=ok?"g":(v===0||s.c===0)?"m":"r",ic=ok?"passt":(v===0||s.c===0)?"teilweise passend":"weicht ab";
+h+=`<div class="it"><div><b>${j+1}. ${s.h}</b><br>${s.q}</div><div class="sans" style="margin-top:6px"><span class="${cls}">Du: ${lab[v]} (${ic})</span> <span class="mu">· im Sinne der Texte: ${s.c===0?"keine eindeutige Antwort, „Neutral“ passt am besten":lab[s.c]}</span></div>`;
+for(const k of["kr","ae","gg"])if(s[k])h+=links(s,k);
+h+=`<details><summary>Erklärung zur Situation lesen</summary>${para(E[j]||s.n)}</details></div>`});
+h+=`</div><h2>Originaltexte lesen</h2><p class="sans src" style="line-height:1.9">• <a href="https://www.unicef.de/informieren/ueber-uns/fuer-kinderrechte/un-kinderrechtskonvention" target="_blank" rel="noopener noreferrer">UN-Kinderrechtskonvention (UNICEF, mit PDF-Download)</a><br>• <a href="https://unric.org/de/allgemeine-erklaerung-menschenrechte/" target="_blank" rel="noopener noreferrer">Allgemeine Erklärung der Menschenrechte (UNRIC)</a> · <a href="https://www.amnesty.de/alle-30-artikel-der-allgemeinen-erklaerung-der-menschenrechte" target="_blank" rel="noopener noreferrer">Fassung von Amnesty International</a><br>• <a href="https://www.gesetze-im-internet.de/gg/" target="_blank" rel="noopener noreferrer">Grundgesetz (gesetze-im-internet.de)</a></p><p class="mu sans">Die Artikel-Schaltflächen oben führen beim Grundgesetz direkt zum Artikel, bei UN-KRK und AEMR zum Volltext. Dort findest du den Artikel anhand der Nummer.</p><p class="mu sans" style="margin-top:18px">Hinweis: Die Fälle sind vereinfacht. Menschenrechte stehen teils in Spannung zueinander und müssen im Einzelfall abgewogen werden. Artikelangaben dienen als Einstieg zum Nachlesen.</p><button class="p" onclick="A.length=0;start()">Quiz neu starten</button>`;
+app.innerHTML=h;window.scrollTo(0,0)}
+const ph=t=>`<span class="ph">[${t}]</span>`;
+const ADR="Simon Hirt<br>Rothenburger Str. 37<br>01099 Dresden";
+const IMP=`<h1>Impressum</h1><p class="mu">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</p>
+<h2>Anbieter</h2><p>${ADR}</p>
+<h2>Kontakt</h2><p>E-Mail: hirti311@gmail.com</p>
+<h2>Hochschulprojekt</h2><p>Diese Website ist im Rahmen des Kurses „Theorie und Praxisfelder 1“ an der SRH University als Teil einer Ausstellung entstanden. Sie wird nicht kommerziell betrieben.</p>
+<h2>Verantwortlich für den Inhalt (§ 18 Abs. 2 MStV)</h2><p>${ADR}</p>
+<h2>Haftung für Inhalte</h2><p>Die Inhalte wurden mit Sorgfalt erstellt. Sie sind bewusst vereinfacht, stellen keine Rechtsberatung dar und können Einzelfälle nicht abbilden.</p>
+<h2>Haftung für Links</h2><p>Diese Seite verlinkt auf externe Webseiten (z. B. UNICEF, UNRIC, Amnesty International, gesetze-im-internet.de). Für deren Inhalte sind ausschließlich die jeweiligen Betreiber verantwortlich. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar.</p>`;
+const DSE=`<h1>Datenschutzerklärung</h1>
+<h2>1. Verantwortliche Stelle</h2><p>${ADR}<br>E-Mail: hirti311@gmail.com</p>
+<h2>2. Überblick</h2><p>Das Quiz läuft vollständig in deinem Browser. Deine Antworten und dein Ergebnis werden weder gespeichert noch an einen Server übertragen oder ausgewertet. Diese Seite verwendet keine Cookies, keine Registrierung, keine Analyse- oder Tracking-Dienste und lädt keine externen Schriftarten oder Skripte.</p>
+<h2>3. Hosting über GitHub Pages und Server-Logfiles</h2><p>Die Website wird über GitHub Pages der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA, bereitgestellt. Beim Aufruf der Seite verarbeitet der Hoster technisch notwendige Daten, insbesondere deine IP-Adresse, Datum und Uhrzeit, die aufgerufene Seite sowie Browser- und Geräteinformationen, um die Seite auszuliefern und die Sicherheit zu gewährleisten. Dabei kann eine Übermittlung in die USA stattfinden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und zuverlässigen Bereitstellung der Website). Weitere Informationen findest du in der Datenschutzerklärung von GitHub: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">docs.github.com</a>.</p>
+<h2>4. Externe Links</h2><p>Die Seite enthält Links zu externen Angeboten (u. a. UNICEF, UNRIC, Amnesty International, gesetze-im-internet.de). Beim Anklicken verlässt du diese Seite. Für die Datenverarbeitung dort sind die jeweiligen Betreiber verantwortlich.</p>
+<h2>5. Kontaktaufnahme</h2><p>Wenn du uns per E-Mail kontaktierst, verarbeiten wir deine Angaben ausschließlich zur Bearbeitung deiner Anfrage (Art. 6 Abs. 1 lit. f DSGVO) und löschen sie, sobald sie nicht mehr erforderlich sind.</p>
+<h2>6. Deine Rechte</h2><p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch (Art. 15 bis 21 DSGVO). Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel bei dem Sächsischen Datenschutz- und Transparenzbeauftragten.</p>
+<p class="mu">Stand: November 2026</p>`;
+const legal=document.getElementById("legal");
+function route(){const h=location.hash;
+if(h==="#impressum"||h==="#datenschutz"){legal.innerHTML=(h==="#impressum"?IMP:DSE)+'<p style="margin-top:24px"><a href="#">Zurück zum Quiz</a></p>';legal.hidden=false;app.hidden=true;window.scrollTo(0,0)}
+else{legal.hidden=true;app.hidden=false}}
+window.addEventListener("hashchange",route);
+start();route();
+</script>
+</body>
+</html>
